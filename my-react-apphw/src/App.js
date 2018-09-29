@@ -37,6 +37,17 @@ class App extends Component {
     }
   };
 
+  resetScore = () => {
+    this.setState({
+      score: 0,
+      topScore: this.state.topScore,
+      fail: "Oooops!",
+      clicked: []
+    });
+    this.shuffle();
+  };
+
+  
   scoreUp = () => {
     const newScore = this.state.score + 1;
     this.setState({
@@ -49,16 +60,6 @@ class App extends Component {
     else if (newScore === 12) {
       this.setState({ fail: "You win!" });
     }
-    this.shuffle();
-  };
-
-  resetScore = () => {
-    this.setState({
-      score: 0,
-      topScore: this.state.topScore,
-      fail: "Oooops!",
-      clicked: []
-    });
     this.shuffle();
   };
 
